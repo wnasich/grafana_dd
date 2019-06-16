@@ -1,10 +1,6 @@
 <?php
 require 'config.php';
 
-/*
-curl -H "Authorization: Bearer eyJrIjoiMzBuOTlJcjVXSHNLNmtnSkpXUkJrTUtJVTdVa1k3VjUiLCJuIjoiYXBpX2FjY2VzcyIsImlkIjoxfQ==" \
-	http://ec2-18-218-250-121.us-east-2.compute.amazonaws.com:3000/api/dashboards/home
-*/
 use GuzzleHttp\Client;
 
 $client = new Client([

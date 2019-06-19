@@ -1,8 +1,5 @@
 <?php
-// Adjust and rename as config.php
-require 'vendor/autoload.php';
-require 'utils.php';
-
+// Rename as config.php and edit
 $config = [
 	'baseUri' => 'http://[grafana_url]:[grafana_port]/api/',
 	'apiKey' => '[api key]',

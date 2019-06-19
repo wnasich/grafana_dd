@@ -1,15 +1,5 @@
 <?php
-require 'config.php';
-
-use GuzzleHttp\Client;
-
-$client = new Client([
-    'base_uri' => $config['baseUri'],
-    'timeout'  => 2.0,
-    'headers' => [
-    	'Authorization' => 'Bearer ' . $config['apiKey']
-    ],
-]);
+require 'bootstrap.php';
 
 $backupFolder = $config['backupFolder'];
 if (!file_exists($backupFolder)) {
@@ -29,4 +19,5 @@ foreach ($dashboards as $dashboard) {
 	$dashboardDef = json_decode($dashboardDef);
 	$dashboardDef = json_encode($dashboardDef, JSON_PRETTY_PRINT);
 	fwrite($fp, $dashboardDef);
+	fclose($fp);
 }

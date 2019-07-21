@@ -10,7 +10,7 @@ $backupFolder .= DIRECTORY_SEPARATOR;
 $dashboards = json_decode((string) $client->get('search')->getBody(), true);
 
 foreach ($dashboards as $dashboard) {
-	$dashboardSlug = slugify($dashboard['title']);
+	$dashboardSlug = URLify::filter ($dashboard['title']);
 	$toFile = $backupFolder . $dashboardSlug . '.json';
 	echo "Exporting dashboard to file {$toFile}\n";
 	$fp = fopen($toFile, 'w');
